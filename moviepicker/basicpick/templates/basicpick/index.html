@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Movie Selection</title>
+  </head>
+  <body>
+    <h1>Get to pickin'</h1>
+    <hr />
+
+    <form action="{% url 'basicpick:result' %}" method="get">
+        {% csrf_token %}
+
+        {{ form }}
+        <br>
+        <br>
+        <input type="submit" value="Pick!">
+    </form>
+  </body>
+</html>

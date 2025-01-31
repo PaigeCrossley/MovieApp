@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Movie Selection</title>
+  </head>
+  <body>
+    <h1>You got...</h1>
+
+    <hr />
+
+    <div class="results">
+      <span>Movie: {{ queryset.movie_name }}</span>
+      <br>
+      <span>Year: {{ queryset.release_year }}</span>
+      <br>
+      {% if queryset.location == "" %}
+      <br>
+      {% else %}
+      <span>Location: {{ queryset.location }}</span>
+      <br>
+      <br>
+      {% endif %}
+    </div>
+    <div class="watched"> 
+      <form action="{% url 'basicpick:watched' queryset.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Mark as watched?">
+      </form>
+    </div>
+    <br>
+    <div class="back-button">
+      <form action="{% url 'basicpick:index' %}">
+        <input type="submit" value="Back"> 
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Watched!</title>
+  </head>
+  <body>
+    <h1>So...</h1>
+
+    <hr />
+    <form action="{% url 'basicpick:updatewatchedmovie' movie_pk %}" method="post">
+      {% csrf_token %}
+      <p>Would you watch it again?</p>
+      {{ form }}
+      <br>
+      <br>
+      <input type="submit" value="Submit!"> 
+    </form>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Error</title>
+  </head>
+  <body>
+    <h1>Oops...</h1>
+
+    <hr />
+
+    <p>There are no movies in that selection.</p>
+    <br>
+    <form action="{% url 'basicpick:index' %}">
+      <input type="submit" value="Back"> 
+    </form>
+  </body>
+</html>
